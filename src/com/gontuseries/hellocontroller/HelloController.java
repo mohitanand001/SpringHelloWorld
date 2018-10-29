@@ -2,6 +2,7 @@ package com.gontuseries.hellocontroller;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
  
@@ -10,10 +11,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class HelloController {
  
 	@RequestMapping("/welcome/{userName}")
-	public ModelAndView helloWorld(){
+	public ModelAndView helloWorld(@PathVariable("userName") String name){
  
 		ModelAndView modelandview = new ModelAndView("HelloPage");
-		modelandview.addObject("welcomeMessage", "HI all");
+		modelandview.addObject("welcomeMessage", "HI " + name);
 		
 		return modelandview;
 	}
