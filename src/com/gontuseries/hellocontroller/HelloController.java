@@ -9,11 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("greet")
 public class HelloController {
  
-	@RequestMapping("/welcome")
+	@RequestMapping("/welcome/{userName}")
 	public ModelAndView helloWorld(){
  
 		ModelAndView modelandview = new ModelAndView("HelloPage");
-		modelandview.addObject("welcomeMessage", "Hi User, welcome to the first Spring MVC Application");
+		modelandview.addObject("welcomeMessage", "HI all");
 		
 		return modelandview;
 	}
