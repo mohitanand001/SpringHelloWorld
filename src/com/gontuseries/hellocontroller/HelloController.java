@@ -7,14 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
  
 @Controller
-@RequestMapping("greet")
 public class HelloController {
  
-	@RequestMapping("/welcome/{userName}")
-	public ModelAndView helloWorld(@PathVariable("userName") String name){
+	@RequestMapping("/welcome/{countryName}/{userName}")
+	public ModelAndView helloWorld(@PathVariable("userName") String name, @PathVariable("countryName") String country){
  
 		ModelAndView modelandview = new ModelAndView("HelloPage");
-		modelandview.addObject("welcomeMessage", "HI " + name);
+		modelandview.addObject("welcomeMessage", "HI " + name + " " + country);
 		
 		return modelandview;
 	}
